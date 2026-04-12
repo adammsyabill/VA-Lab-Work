@@ -65,4 +65,14 @@ Some random or unreadable characters are also shown. No hidden flag or meaningfu
 
 We use the file command to determine the actual type of a file based on its content, not just its file extension.
 
+![image alt](https://github.com/adammsyabill/VA-Lab-Work/blob/36d5eef0e8abbe5e67b50cdeb34f9bcca5284696/image/Screenshot%202026-04-13%20041318.png)
+
+and we can see that the actual file extension of solitaire.exe is actually .png so we can change the file's extension
+
+    mv solitaire.exe solitaire.png
+
+    open solitaire.png
+
+now we can open solitaire image
+
 
