@@ -15,3 +15,7 @@ This shows that images can contain hidden data within metadata fields such as co
 2.0 hexeditor
 
     hexeditor computer.jpg
+
+We use hexeditor to view the raw binary content of the file. It allows us to analyze both hexadecimal values and ASCII-readable text inside the image, which may reveal hidden or embedded information.
+
+
