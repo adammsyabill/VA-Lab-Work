@@ -79,4 +79,10 @@ now we can open solitaire image
 
 it also same to rubiks.jpg
 
+![image alt](https://github.com/adammsyabill/VA-Lab-Work/blob/0247bbe9f51ef75ba6d820491a916fd436335067/image/Screenshot%202026-04-13%20041600.png)
 
+nd it turns out to be .png extension. we can change the extension by using
+
+    mv rubiks.jpg rubiks.png
+
+    open rubiks.png
