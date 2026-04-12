@@ -43,4 +43,14 @@ So, we can see it contains hidden_text.txt now open the hidden_text.txt to see w
 
     open hidden_text.txt
 
+![image alt](https://github.com/adammsyabill/VA-Lab-Work/blob/6a50a3eb80d55e66422088e88e8b27f6c416dd69/image/Screenshot%202026-04-13%20040643.png)
+
+and then we found the THIS IS A HIDDEN FLAG
+
+4.0 strings
+
+    strings computer.jpg
+
+We use the strings command to extract human-readable text from a binary file. This helps identify any embedded text or information without analyzing raw hexadecimal data
+
 
