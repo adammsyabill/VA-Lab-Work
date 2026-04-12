@@ -4,25 +4,23 @@ LAB 4
 
     exiftool ocean.jpg
 
-We use exiftool to extract metadata from the image file. Metadata is hidden information stored inside the image such as file details, creation data and additional embedded information that cannot be seen normally
+We use exiftool to extract metadata from the image file so that hidden information stored inside the image such as file details, creation data and additional embedded information that cannot be seen normally
 
 ![image alt](https://github.com/adammsyabill/VA-Lab-Work/blob/0e7ac7852a9f320dbcde9dca074f080e9a91fe2d/image/Screenshot%202026-04-13%20040208.png)
 
 and then we found in the comment: THIS IS HIDDEN FLAG
 
-This shows that images can contain hidden data within metadata fields such as comments.
+This show that image can contain hidden data within metadata fields such as comments
 
 2.0 hexeditor
 
     hexeditor computer.jpg
 
-We use hexeditor to view the raw binary content of the file. It allows us to analyze both hexadecimal values and ASCII-readable text inside the image, which may reveal hidden or embedded information.
+We use hexeditor to view the raw binary content of the file. It will allows us to analyze both hexadecimal values and ASCII-readable text inside the image, which may reveal hidden or embedded information.
 
 ![image alt](https://github.com/adammsyabill/VA-Lab-Work/blob/c233523959e4046d93f5518b2ce823c8f7557420/image/Screenshot%202026-04-13%20040250.png)
 
-From the ouput, we can see that the hexeditor displays two sections: • Left side shows hexadecimal values • Right side shows ASCII-readable text
-
-and then we press w in the hexeditor to find possible strings such as "flag" (in this lab) but we found nothing. so the computer.jpg does not contains anything unusual.
+From the ouput, we can see that hexeditor displays two sections which: • Left side shows hexadecimal values • Right side shows ASCII-readable text
 
 3.0 binwalk
 
@@ -51,7 +49,7 @@ and then we found the THIS IS A HIDDEN FLAG
 
     strings computer.jpg
 
-We use the strings command to extract human-readable text from a binary file. This helps identify any embedded text or information without analyzing raw hexadecimal data
+We use the strings command to extract human readable text from a binary file. This will helps identify any embedded text or information without analyzing raw hexadecimal data
 
 ![image alt](https://github.com/adammsyabill/VA-Lab-Work/blob/b5c205bce7aa21f99732fbc4224ed9b3bdb72aa1/image/Screenshot%202026-04-13%20040903.png)
 
@@ -86,3 +84,5 @@ nd it turns out to be .png extension. we can change the extension by using
     mv rubiks.jpg rubiks.png
 
     open rubiks.png
+
+![image alt](https://github.com/adammsyabill/VA-Lab-Work/blob/bba2c4956156fccdf2c7370d8fd14a1e7e644758/image/Screenshot%202026-04-13%20041543.png)
