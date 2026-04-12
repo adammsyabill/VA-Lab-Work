@@ -27,3 +27,20 @@ and then we press w in the hexeditor to find possible strings such as "flag" (in
 3.0 binwalk
 
     binwalk dog.jpg
+
+![image alt](https://github.com/adammsyabill/VA-Lab-Work/blob/028d10bfe47f7197c17b50b41f8b99e621bb318b/image/Screenshot%202026-04-13%20040709.png)
+
+We can see zip file is embedded in this file. So now we can extract it using
+
+    binwalk -e dog.jpg
+
+and then we will get _dog.jpg.extracted folder. so we can see what is in the folder.
+
+    cd _dog.jpg.extracted
+    ls
+    
+So, we can see it contains hidden_text.txt now open the hidden_text.txt to see what is inside
+
+    open hidden_text.txt
+
+
