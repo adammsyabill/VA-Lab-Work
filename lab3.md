@@ -1,4 +1,5 @@
 PwnTillDawn 10.150.150.12
+
 First we need to scan the entire subnetwork to get to the reachable IP address by using ping scan because it is lightweight.
 
                                                               sudo namp -sn 10.150.150.10/24
