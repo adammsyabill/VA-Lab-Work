@@ -30,4 +30,22 @@ To identify the cipher, I searched online and found that the symbol set matched 
 
 The decoder returned the plaintext, revealing the flag.
 
+![image alt](https://github.com/adammsyabill/VA-Lab-Work/blob/7572e97736a69b5b0b5543bcf35e4732807aa2a6/image/Screenshot%202026-06-05%20000121.png)
 
+Answer: EXMACHINAAVA
+
+Q3: Interpret an Nmap Output
+
+POST STATE VERSION 2.1/tcp open ftp vsftpd 2.3.4 22/tcp open ssh OpenSSH 5.3p1 80/tcp open http Apache 2.2.8 138/tcp open netbios-smb 445/tcp open microsoft-ds Windows 7 Professional 7601 Service Pack 1
+
+Questions:
+1. What can an attacker do with each port?
+2. What vulnerabilities are likely present based on the version?
+
+For Port 21 (FTP), an attacker could potentially exploit it to install a backdoor or gain unauthorised access. Beyond that, FTP transmits credentials in plaintext, meaning a network sniffer can easily intercept usernames and passwords. Older versions are known to carry additional vulnerabilities, making this port a prime target for persistent access.
+
+For Port 80 (HTTP), the server is running an outdated version of Apache, which is susceptible to a range of web-based attacks including SQL injection, file inclusion, and service misconfigurations. If exploited successfully, these vulnerabilities can give an attacker a foothold into the underlying system.
+
+Port 138 (NetBIOS) supports Windows file-sharing features and legacy network services. It can be leveraged to silently gather internal system information — such as usernames, shared resources, and system details — without requiring authentication in certain scenarios. This makes it highly valuable for reconnaissance, as it doesn't disrupt the system but provides meaningful intelligence that enhances the effectiveness of further attacks.
+
+For Port 445 (SMB), the Server Message Block service is common in Windows environments. Attackers can enumerate users, access shared folders, and attempt password attacks. SMB has a well-documented history of serious vulnerabilities, including those that enable remote code execution. If exploited, an attacker can achieve full control over the system and potentially propagate the attack across the network.
