@@ -10,8 +10,14 @@ Upon reviewing the packets, i noticed one particular packet stood out it size wa
 
 After isolating the suspicious packet and inspecting its data field, I observed that the content appeared to be encoded. Recognising the pattern, I determined it was Base64 encoding.
 
-To decode it, I used CyberChef — a free, browser-based tool commonly used in CTF challenges for data transformations. I applied the "From Base64" operation, and the output revealed the flag directly.
+To decode it, I used CyberChef a free, browser based tool commonly used in CTF challenges for data transformations. I applied the "From Base64" operation, and the output revealed the flag directly.
 
 ![image alt](https://github.com/adammsyabill/VA-Lab-Work/blob/a83cf594359110a37b1f669b3428e55d21be8b5c/image/Screenshot%202026-06-04%20234509.png)
 
 Answer: SUCTF2023{ai_is_cool}
+
+Q2
+
+After filtering out the ICMP packets which all shared the same file size I focused exclusively on the TCP traffic for deeper analysis.
+
+
