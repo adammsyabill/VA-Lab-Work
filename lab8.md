@@ -19,4 +19,9 @@ Challenge 5
 
     ping 192.168.44.131
 
-    
+  ![image alt](https://github.com/adammsyabill/VA-Lab-Work/blob/9fc523763a313b4ee03df5025baf52636f4aedb8/image/Screenshot%202026-06-05%20004409.png)
+
+  Challenge 9
+
+        nc 192.168.44.131
+
