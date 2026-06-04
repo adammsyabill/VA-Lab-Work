@@ -25,3 +25,10 @@ Challenge 5
 
         nc 192.168.44.131
 
+![image alt](https://github.com/adammsyabill/VA-Lab-Work/blob/141a6783128c9d5715a32eff73c5a62ad13303ab/image/Screenshot%202026-06-05%20004826.png)
+
+Challenge 17
+
+    nmap -o 192.168.44.131
+
+    
