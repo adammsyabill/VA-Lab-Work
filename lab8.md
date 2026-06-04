@@ -31,4 +31,10 @@ Challenge 17
 
     nmap -o 192.168.44.131
 
-    
+![image alt](https://github.com/adammsyabill/VA-Lab-Work/blob/073dbc8f1ab2810148b3559dbc8b5ddc65b5e0f2/image/Screenshot%202026-06-05%20005103.png)
+
+Challenge 19
+
+    rpcinfo -p 192.168.44.131
+
+
