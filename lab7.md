@@ -12,3 +12,4 @@ After isolating the suspicious packet and inspecting its data field, I observed 
 
 To decode it, I used CyberChef — a free, browser-based tool commonly used in CTF challenges for data transformations. I applied the "From Base64" operation, and the output revealed the flag directly.
 
+![image alt](
