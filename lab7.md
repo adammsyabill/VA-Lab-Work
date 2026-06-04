@@ -20,4 +20,8 @@ Q2
 
 After filtering out the ICMP packets which all shared the same file size I focused exclusively on the TCP traffic for deeper analysis.
 
+![image alt](https://github.com/adammsyabill/VA-Lab-Work/blob/30106aa6967d63e82eddd015f2f45769062d8532/image/Screenshot%202026-06-04%20235353.png)
+
+Examining the TCP stream revealed a successful file transfer. The transferred file was named global_thermonuclear_war.gamerules.txt. Inside the file was a link pointing to a Google Doc titled "Club Tux," which contained a series of unusual symbols that didnt immediately make sense.
+
 
