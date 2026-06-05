@@ -12,4 +12,8 @@ After the metasploit running, you need to find for an exploit
 
 Then you need to selct an module to see what option 
 
+![image alt](https://github.com/adammsyabill/VA-Lab-Work/blob/90b4c0d6bcf9611f748b8287b6a55a40ccbb5d0d/image/Screenshot%202026-06-05%20161302.png)
+
+After you had done it, you need to set RHOST and LHOST
+
 
