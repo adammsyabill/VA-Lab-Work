@@ -16,4 +16,8 @@ Then you need to selct an module to see what option
 
 After you had done it, you need to set RHOST and LHOST
 
+![image alt](https://github.com/adammsyabill/VA-Lab-Work/blob/7fcb95d0859501b38ae0772a4e5a3bcd67c20866/image/Screenshot%202026-06-05%20161345.png)
+
+Then you will get the shell
+
 
