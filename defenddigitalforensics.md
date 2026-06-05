@@ -12,4 +12,8 @@ Then you will get file directory
 
 You will see what it contains in this file
 
+    exiftool to get the data in the file.jpg
+
+![image alt](https://github.com/adammsyabill/VA-Lab-Work/blob/0c96c620f9c6a4b446ad67a5bed940f3998c31bb/image/Screenshot%202026-06-05%20165430.png)
+
 
