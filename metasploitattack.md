@@ -20,4 +20,4 @@ After you had done it, you need to set RHOST and LHOST
 
 Then you will get the shell
 
-
+![image alt](https://github.com/adammsyabill/VA-Lab-Work/blob/2b0c992ca034b76c974b67c50d582a9aafc2289e/image/Screenshot%202026-06-05%20161358.png)
