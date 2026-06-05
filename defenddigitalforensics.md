@@ -16,4 +16,6 @@ You will see what it contains in this file
 
 ![image alt](https://github.com/adammsyabill/VA-Lab-Work/blob/0c96c620f9c6a4b446ad67a5bed940f3998c31bb/image/Screenshot%202026-06-05%20165430.png)
 
+Then you will get the location info of the attacker
 
+![image alt](https://github.com/adammsyabill/VA-Lab-Work/blob/2a35e43a2c9a1fe42e5c199f0116f85f0f9ff1a8/image/Screenshot%202026-06-05%20165500.png)
