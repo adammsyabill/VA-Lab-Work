@@ -6,5 +6,7 @@ Start the attckbox, then downloads the file
 
 ![image alt](https://github.com/adammsyabill/VA-Lab-Work/blob/6ef0036d0dda5ca7c2a11211fef801b6b97018ff/image/Screenshot%202026-06-05%20165346.png)
 
+Then you will get file directory
+
 
 
